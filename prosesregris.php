@@ -1,10 +1,4 @@
 <?php
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$nim = $_POST['nim'];
-	$nama = $_POST['nama']; 
-}
-
 
 include("koneksi.php");
 
@@ -14,18 +8,14 @@ include("koneksi.php");
     $alamat = $_POST['alamat'];
     $nim = $_POST['nim'];
 
-    $sql = "INSERT INTO coba (nama, alamat, nim) VALUE ('$nama', '$alamat', '$nim')";
-    $query = mysqli_query($db, $sql);
+    $sql = "INSERT INTO coba1 (nama, alamat, nim) VALUES ('$nama', '$alamat', '$nim')";
+    $query =;
 
-    if( $query ) {
-        header('Location: ');
+    if( mysqli_query($db, $sql)) {
+        echo "berhasil";
     } else {
-        header('Location: ');
+        echo "gagal";;
     }
-
-
-} else {
-    die("Akses dilarang...");
 }
 
 
